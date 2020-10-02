@@ -21,7 +21,7 @@ public class PlayerController : BaseEntity
         {
             x++;
         }
-        this.XVelocityGoal = this.VelocityLimit * x;
+        this.XVelocityGoal = this.VelocityLimit.x * x;
 
         // Controls jump
         if (Input.GetKeyDown(this.Up))

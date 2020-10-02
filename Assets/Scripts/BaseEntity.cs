@@ -7,7 +7,7 @@ public abstract class BaseEntity : MonoBehaviour
     public Vector2 Velocity;
     public float XVelocityGoal;
 
-    public float VelocityLimit;
+    public Vector2 VelocityLimit;
     public float XVelocityLerp;
 
     public float JumpSpeed;
@@ -77,8 +77,8 @@ public abstract class BaseEntity : MonoBehaviour
 
         // limit the movement speed
         this.Velocity = new Vector2(
-            Mathf.Clamp(this.Velocity.x, -this.VelocityLimit, this.VelocityLimit),
-            Mathf.Max(this.Velocity.y, -this.VelocityLimit)
+            Mathf.Clamp(this.Velocity.x, -this.VelocityLimit.x, this.VelocityLimit.x),
+            Mathf.Max(this.Velocity.y, -this.VelocityLimit.y)
         );
 
         // Move
